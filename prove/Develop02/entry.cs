@@ -1,24 +1,22 @@
 class Entry
 {
     // attributes
-    public string date = "";
-    public string prompt = "";
-    public string resonse = "";
-    public string entry = "";
+    public string _date;
+    public string _prompt;
+    public string _response;
+
+    public Entry(string prompt, string response)
+    {
+        _prompt = prompt;
+        _response = response;
+        _date = DateTime.Today.ToString("MM/dd/yyyy");
+    }
 
     // behaviors
-    public string GetRandomPrompt(List<string> prompts)
-    {
-        
-    }
 
-    public string GetResponse(string prompt)
+    public string FormatEntry(Entry newEntry)
     {
-        
-    }
-
-    public string FormatEntry(string date, string prompt, string response)
-    {
-        
+        string formattedEntry = $"{newEntry._date}||{newEntry._prompt}||{newEntry._response}";
+        return formattedEntry;
     }
 }
