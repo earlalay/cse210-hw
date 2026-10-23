@@ -3,18 +3,23 @@ class Reference
     // attributes
     private string _book;
     private int _chapter;
-    private int _verseBeginning;
-    private int _verseEnding;
+    private int _firstVerse;
+    private int _lastVerse;
 
     // constructors
-    public Reference (string book, int chapter, string verse)
+    public Reference (string book, int chapter, int verse)
     {
-        
+        _book = book;
+        _chapter = chapter;
+        _firstVerse = verse;
     }
 
-    public Reference (string book, int chapter, string firstVerse, string lastVerse)
+    public Reference (string book, int chapter, int firstVerse, int lastVerse)
     {
-        
+        _book = book;
+        _chapter = chapter;
+        _firstVerse = firstVerse;
+        _lastVerse = lastVerse;
     }
 
     // behaviors
