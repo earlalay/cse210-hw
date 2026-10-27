@@ -4,7 +4,7 @@ class Reference
     private string _book;
     private int _chapter;
     private int _firstVerse;
-    private int _lastVerse;
+    private int _lastVerse = 0;
 
     // constructors
     public Reference (string book, int chapter, int verse)
@@ -23,8 +23,17 @@ class Reference
     }
 
     // behaviors
-    public void Display()
+    public string BuildReference()
     {
-        
+        string reference;
+        if (_lastVerse == 0)
+        {
+            reference = $"{_book} {_chapter}:{_firstVerse}";
+        }
+        else
+        {
+            reference = $"{_book} {_chapter}:{_firstVerse}-{_lastVerse}";
+        }
+        return reference;
     }
 }

@@ -2,12 +2,13 @@ class Word
 {
     // attributes
     private string _word = "";
-    private bool _isHidden = false;
+    private bool _isHidden;
 
     // constructors
-    public Word()
+    public Word(string word)
     {
-        
+        _word = word;
+        _isHidden = false;
     }
 
     // behaviors
@@ -31,8 +32,28 @@ class Word
         _isHidden = isHidden;
     }
 
-    public void Display()
+    public string BuildDisplayedWord()
     {
-        // maybe get rid of this and just display from scripture?
+        string displayedWord = "";
+        if (_isHidden)
+        {
+            foreach (char character in _word)
+            {
+                if (char.IsLetter(character))
+                {
+                    displayedWord += "_";
+                }
+                else
+                {
+                    displayedWord += $"{character}";
+                }
+            }
+        }
+        else
+        {
+            displayedWord = _word;
+        }
+            
+        return displayedWord;
     }
 }
