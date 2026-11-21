@@ -14,9 +14,12 @@ public abstract class Goal {
     
     // behaviors
     public abstract void ShowDescription();
-    public abstract void GetSaveString();
-    public int GetPoints()
+    public abstract string GetSaveString();
+    public abstract int GetPoints();
+    public abstract bool GetCompleted();
+    public string GetTitle()
     {
-        
+        return _title;
     }
+    public abstract void IncreaseTimesDone();
 }
